@@ -2,9 +2,9 @@ const saveBoxer = document.querySelector('#saveBoxer')
 saveBoxer.addEventListener('click', createBoxer);
 // const editBoxer = document.querySelector('#editBoxer');
 // editBoxer.addEventListener('click', editBoxer);
-const boxers = [];
 
 function createBoxersArray() {
+  const boxers = [];
   const newBoxer = {
     firstName: firstName.value,
     lastName: lastName.value,
@@ -23,10 +23,9 @@ function updateBoxersArray() {
     nationality: nationality.value,
     weightClass: weightClass.value
   };
-  const previousBoxers = JSON.parse(localStorage.getItem('boxers'));
-  boxers.push(previousBoxers, newBoxer)
+  const boxers = JSON.parse(localStorage.getItem('boxers'));
+  boxers.push(newBoxer)
   localStorage.setItem('boxers', JSON.stringify(boxers));
-  console.log(previousBoxers);
 
   // localStorage.setItem('boxers', JSON.stringify());
 }
