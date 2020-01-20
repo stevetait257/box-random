@@ -3,13 +3,15 @@ saveBoxer.addEventListener('click', createBoxer);
 // const editBoxer = document.querySelector('#editBoxer');
 // editBoxer.addEventListener('click', editBoxer);
 
+
 function createBoxersArray() {
   const boxers = [];
   const newBoxer = {
     firstName: firstName.value,
     lastName: lastName.value,
     nationality: nationality.value,
-    weightClass: weightClass.value
+    weightClass: weightClass.value,
+    record: 0-0
   };
   boxers.push(newBoxer);
   localStorage.setItem('boxers', JSON.stringify(boxers));
@@ -21,7 +23,9 @@ function updateBoxersArray() {
     firstName: firstName.value,
     lastName: lastName.value,
     nationality: nationality.value,
-    weightClass: weightClass.value
+    weightClass: weightClass.value,
+    record: 0-0
+
   };
   const boxers = JSON.parse(localStorage.getItem('boxers'));
   boxers.push(newBoxer)
@@ -47,3 +51,9 @@ function createBoxer() {
 // function editBoxer() {
 
 // }
+
+function liMaker(boxer) {
+  const li = document.createElement('li');
+  li.textContent = boxer;
+  ul.appendChild(li);
+}
