@@ -11,11 +11,13 @@ function createBoxersArray() {
     lastName: lastName.value,
     nationality: nationality.value,
     weightClass: weightClass.value,
-    record: 0-0
+    wins: 0,
+    losses: 0
+
   };
   boxers.push(newBoxer);
   localStorage.setItem('boxers', JSON.stringify(boxers));
-}
+};
 
 function updateBoxersArray() {
   // debugger;
@@ -24,15 +26,13 @@ function updateBoxersArray() {
     lastName: lastName.value,
     nationality: nationality.value,
     weightClass: weightClass.value,
-    record: 0-0
-
+    wins: 0,
+    losses: 0
   };
   const boxers = JSON.parse(localStorage.getItem('boxers'));
   boxers.push(newBoxer)
   localStorage.setItem('boxers', JSON.stringify(boxers));
-
-  // localStorage.setItem('boxers', JSON.stringify());
-}
+};
 
 function createBoxer() {
   const firstName = document.querySelector("#firstName");
@@ -48,12 +48,7 @@ function createBoxer() {
   }
 }
 
+
 // function editBoxer() {
 
 // }
-
-function liMaker(boxer) {
-  const li = document.createElement('li');
-  li.textContent = boxer;
-  ul.appendChild(li);
-}

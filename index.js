@@ -7,6 +7,7 @@ const liMaker = (boxerInfo) => {
   const li = document.createElement('li');
   li.textContent = boxerInfo;
   ul.appendChild(li);
+  console.log(li);
 };
 
 (function printBoxers() {
