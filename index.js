@@ -1,7 +1,7 @@
 // alert('hey how ya going, mate?!');
 
 const boxerStorage = JSON.parse(localStorage.getItem('boxers'));
-const ul = document.querySelector('ul');
+const ul = document.querySelector('.boxer-list');
 
 const liMaker = (boxerInfo) => {
   const li = document.createElement('li');
@@ -12,7 +12,7 @@ const liMaker = (boxerInfo) => {
 
 (function printBoxers() {
   boxerStorage.forEach(e => {
-    liMaker(`Name: ${e.firstName} ${e.lastName}, Record: ${e.record}`)
-    console.log(`Name: ${e.firstName} ${e.lastName}, Record: ${e.record}`);
+    liMaker(`Name: ${e.firstName} ${e.lastName},  Wins: ${e.wins} | Losses: ${e.losses}`);
+ 
   });
 })();
