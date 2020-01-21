@@ -1,18 +1,25 @@
 // alert('hey how ya going, mate?!');
 
 const boxerStorage = JSON.parse(localStorage.getItem('boxers'));
-const ul = document.querySelector('.boxer-list');
+const table = document.querySelector('#boxer-list');
 
-const liMaker = (boxerInfo) => {
-  const li = document.createElement('li');
-  li.textContent = boxerInfo;
-  ul.appendChild(li);
-  console.log(li);
-};
 
 (function printBoxers() {
+  // debugger;
   boxerStorage.forEach(e => {
-    liMaker(`Name: ${e.firstName} ${e.lastName},  Wins: ${e.wins} | Losses: ${e.losses}`);
- 
+    const tr = document.createElement('tr');
+    table.appendChild(tr);
+    const boxerData = [
+      [`Name: ${e.firstName} ${e.lastName}`],
+      [`Wins: ${e.wins} `],
+      [` Losses: ${e.losses} `]
+    ];
+
+    boxerData.forEach(el => {
+      const td = document.createElement('td');
+      td.textContent = [...el];
+      tr.appendChild(td);
+    });
+
   });
 })();

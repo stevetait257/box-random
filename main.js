@@ -13,14 +13,12 @@ function createBoxersArray() {
     weightClass: weightClass.value,
     wins: 0,
     losses: 0
-
   };
   boxers.push(newBoxer);
   localStorage.setItem('boxers', JSON.stringify(boxers));
 };
 
 function updateBoxersArray() {
-  // debugger;
   const newBoxer = {
     firstName: firstName.value,
     lastName: lastName.value,
@@ -39,7 +37,6 @@ function createBoxer() {
   const lastName = document.querySelector("#lastName");
   const nationality = document.querySelector("#nationality");
   const weightClass = document.querySelector("#weightClass");
-  // debugger;
   if (!localStorage.getItem('boxers')) {
     createBoxersArray(firstName, lastName, nationality, weightClass);
   } else {

@@ -1,56 +1,56 @@
-  /* <==================== ID's ====================> */
-  #add {
-    margin-left: 1.65rem;
-  }
+/* <==================== ID's ====================> */
+#add {
+	margin-left: 1.65rem;
+}
 
-  /* <==================== Classes ====================> */
+#boxer-list {
+	font-size: 3rem;
+}
 
-  .content {
-    text-align: left;
-    padding-top: 10%;
-    margin-bottom: 5rem;
-    color: rgba(237, 241, 170, 0.7);
-    text-shadow: 0px 2px 4px gray, 0px 6px 10px black;
-  }
+/* <==================== Classes ====================> */
 
-  .nav {
+.content {
+	text-align: left;
+	padding-top: 10%;
+	margin-bottom: 5rem;
+	color: rgba(237, 241, 170, 0.7);
+	text-shadow: 0px 2px 4px gray, 0px 6px 10px black;
+}
 
-    font-size: 1.6rem;
-  }
+.nav {
+	font-size: 1.6rem;
+}
 
-  .jumbortron {}
+.jumbortron {
+}
 
-  /* <==================== HTML Tags ====================> */
+/* <==================== HTML Tags ====================> */
 
+body {
+	background: url(../images/ali.png);
+	background-size: cover;
+	height: 100%;
+}
 
-  body {
-    background: url(../images/ali.png);
-    background-size: cover;
-    height: 2000px;
+h1 {
+	font-size: 10rem;
+	color: rgba(237, 241, 170, 0.7);
+}
 
-  }
+html {
+	height: 100%;
+}
 
+hr {
+	border-top: .2rem solid rgba(237, 241, 170, 0.7);
+	margin-left: 0;
+	width: 30%;
+}
 
-  h1 {
-    font-size: 10rem;
-    color: rgba(237, 241, 170, 0.7);
+li {
+	font-size: 2rem;
+}
 
-
-  }
-
-
-  html {
-    height: 100%;
-  }
-
-
-  hr {
-    border-top: .2rem solid rgba(237, 241, 170, 0.7);
-    margin-left: 0;
-    width: 30%;
-
-  }
-
-  li {
-    font-size: 2rem;
-  }
+td {
+	padding: .8rem 1rem;
+}
