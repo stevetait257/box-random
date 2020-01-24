@@ -1,3 +1,9 @@
+@media print {
+	a[href]:after {
+		content: none !important;
+	}
+}
+
 /* <==================== ID's ====================> */
 #add {
 	margin-left: 1.65rem;
@@ -7,12 +13,20 @@
 	font-size: 3rem;
 }
 
+
 #save-boxer {
-  margin-left: 1.6rem;
-  margin-bottom: 2rem;
+	margin-left: 1.6rem;
+	margin-bottom: 2rem;
 }
 
 /* <==================== Classes ====================> */
+.card {
+	height: 28rem;
+	width: 20rem;
+	margin: 1rem;
+	padding: 1rem;
+	border: black solid 1px;
+}
 
 .content {
 	text-align: left;
@@ -26,8 +40,7 @@
 	font-size: 1.6rem;
 }
 
-.jumbortron {
-}
+.jumbortron {}
 
 /* <==================== HTML Tags ====================> */
 

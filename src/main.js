@@ -1,13 +1,26 @@
-// const saveBoxer = document.querySelector("#save-boxer")
+const saveBoxer = document.querySelector("#save-boxer")
+saveBoxer.addEventListener("click", createBoxer);
 
-// saveBoxer.addEventListener("click", createBoxer);
-// // const editBoxer = document.querySelector("#editBoxer");
-// // editBoxer.addEventListener("click", editBoxer);
+const editBoxer = document.querySelector("#editBoxer");
+// editBoxer.addEventListener("click", editBoxer);
+
+let id = localStorage.getItem('id') || localStorage.setItem('id', 1);
+
+// create an incrementer for the Id of the boxer.
+// function getId() {
+//   (localStorage.getItem('id')) ? id = localStorage.getItem('id') + 1: id = localStorage.setItem('id', '0');
+
+// };
+
+// add 1 to i each time xa boxer is created and remove one each time one 
+// is deleted
+
 
 
 function createBoxersArray() {
   const boxers = [];
   const newBoxer = {
+    id: id,
     firstName: firstName.value,
     lastName: lastName.value,
     nationality: nationality.value,
@@ -21,6 +34,7 @@ function createBoxersArray() {
 
 function updateBoxersArray() {
   const newBoxer = {
+    id: id,
     firstName: firstName.value,
     lastName: lastName.value,
     nationality: nationality.value,
@@ -29,7 +43,8 @@ function updateBoxersArray() {
     losses: 0
   };
   const boxers = JSON.parse(localStorage.getItem("boxers"));
-  boxers.push(newBoxer)
+  boxers.push(newBoxer);
+  console.dir(newBoxer);
   localStorage.setItem("boxers", JSON.stringify(boxers));
 };
 
@@ -44,28 +59,11 @@ function createBoxer() {
     console.log("Boxer exists");
     updateBoxersArray(firstName, lastName, nationality, weightClass);
   }
+  //id++;
+  //localStorage.setItem('id', ) = id;
 };
 
-(function displayBoxers() {
-  const boxersToDisplay = JSON.parse(localStorage.getItem("boxers"));
-  const cardsRow = document.querySelector("#boxer-container")
-  boxersToDisplay.forEach(function (e) {
-
-    const card = document.createElement("div")
-    card.className = "card border-dark mb-3";
-    const cardHeader = document.createElement("div")
-    cardHeader.className = "card-header";
-    cardHeader.textContent = e.firstName;
-    const cardBody = document.createElement("div")
-    cardBody.className = "card-body text-dark"
-    cardBody.textContent = e.lastName;
-    card.appendChild(cardHeader);
-    card.appendChild(cardBody);
-    cardsRow.appendChild(card);
-  });
-})();
-
-function editBoxer(){
-  
+function deleteBoxers() {
+  localStorage.removeItem('boxers');
 
 }
