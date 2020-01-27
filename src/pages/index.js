@@ -12,6 +12,7 @@ table.addEventListener('click', function (e) {
 });
 
 
+
 (function printBoxers() {
 
   boxerStorage.forEach(boxer => {

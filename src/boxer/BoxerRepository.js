@@ -27,22 +27,29 @@ class BoxerRepository extends BaseRepository {
   }
 
   editBoxer() {
-    debugger;
-    const boxerStorage = this.getAll();
+    let index;
+    let boxer;
     const idSearch = location.search;
     const boxerId = idSearch.slice(4);
-    console.log(boxerId);
-    // boxerStorage.find(boxerId);
-    boxerStorage.find(function (obj) {
-      return obj.id === boxerId
-    })[0]
-
+    for (let i = 0; i < boxerStorage.length; i++) {
+      if (boxerStorage[i].id === boxerId) {
+        boxer = boxerStorage[i];
+        index = boxerStorage.indexOf(boxerStorage[i]);
+      }
+    }
+    document.getElementById('#firstName').textContent = boxer.firstName;
+    document.getElementById('#lastName').textContent = boxer.lastName;
+    document.getElementById('#nationality').textContent = boxer.nationality;
+    document.getElementById('#weightClass').textContent = boxer.weightClass;
   }
 
   displayBoxers() {
 
   }
 
+
+
+  deleteBoxer() {}
 
 
 }
