@@ -8,12 +8,16 @@
 </form>
 */
 
-
-document.querySelector('#create').addEventListener('click', function(){
+document.querySelector('#create').addEventListener('click', function () {
   const boxerRepo = new BoxerRepository();
+  let id;
   const firstName = document.querySelector('#firstName').value;
   const lastName = document.querySelector('#lastName').value;
-  const boxer = new Boxer(firstName, lastName);
+  const nationality = document.querySelector('#nationality').value;
+  const weightClass = document.querySelector('#weightClass').value;
+  const wins = 0;
+  const losses = 0;
+  const boxer = new Boxer(id, firstName, lastName, nationality, weightClass, wins, losses);
   boxerRepo.create(boxer);
 })
 

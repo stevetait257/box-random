@@ -1,17 +1,32 @@
-const boxerStorage = JSON.parse(localStorage.getItem("boxers")) || [];
-const table = document.querySelector("#boxer-list");
+const boxerRepos = new BoxerRepository();
+const boxerStorage = boxerRepos.getAll();
+const table = document.querySelector('#boxer-list');
+
+table.addEventListener('click', function (e) {
+  if (e.target && e.target.matches('.edit')) {
+    boxerRepos.editBoxer(e);
+  }
+  if (e.target && e.target.matches('.delete')) {
+    boxerRepos.deleteBoxer(e);
+  }
+});
+
 
 (function printBoxers() {
 
   boxerStorage.forEach(boxer => {
-    const tr = document.createElement("tr");
+    const tr = document.createElement('tr');
     table.appendChild(tr);
     const deleteBoxerButton = document.createElement('a');
     deleteBoxerButton.href = `index.html?id=${boxer.id}`;
+    deleteBoxerButton.hash = `${boxer.id}`;
     deleteBoxerButton.textContent = 'delete';
+    deleteBoxerButton.className = 'delete';
     const editBoxerButton = document.createElement('a');
     editBoxerButton.textContent = 'edit ';
-    editBoxerButton.href = `form.html?id=${boxer.id}`;
+    editBoxerButton.className = 'edit ';
+    editBoxerButton.href = `index.html?id=${boxer.id}`;
+    editBoxerButton.hash = `${boxer.id}`;
     tr.appendChild(editBoxerButton);
     tr.appendChild(deleteBoxerButton);
 
@@ -21,11 +36,7 @@ const table = document.querySelector("#boxer-list");
       ` Losses: ${boxer.losses} `
     ];
     boxerData.forEach(el => {
-
       const td = document.createElement('td');
-
-      //this does not work outside of this foreach 
-
       td.textContent = [el];
       tr.appendChild(td);
     });
