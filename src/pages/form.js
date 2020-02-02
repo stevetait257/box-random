@@ -8,6 +8,14 @@
 </form>
 */
 
+document.querySelector('#save').addEventListener('click', function () {
+
+  const boxerRepo = new BoxerRepository();
+
+  boxerRepo.edit(this.index);
+
+})
+
 document.querySelector('#create').addEventListener('click', function () {
   const boxerRepo = new BoxerRepository();
   let id;

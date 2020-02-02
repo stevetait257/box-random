@@ -4,14 +4,12 @@ const table = document.querySelector('#boxer-list');
 
 table.addEventListener('click', function (e) {
   if (e.target && e.target.matches('.edit')) {
-    boxerRepos.editBoxer(e);
+    boxerRepos.getBoxerToEdit(e);
   }
   if (e.target && e.target.matches('.delete')) {
-    boxerRepos.deleteBoxer(e);
+    boxerRepos.delete(e);
   }
 });
-
-
 
 (function printBoxers() {
 
@@ -38,7 +36,7 @@ table.addEventListener('click', function (e) {
     ];
     boxerData.forEach(el => {
       const td = document.createElement('td');
-      td.textContent = [el];
+      td.textContent = el;
       tr.appendChild(td);
     });
 
