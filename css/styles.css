@@ -19,7 +19,19 @@
 	margin-bottom: 2rem;
 }
 
+#boxer {
+
+	margin-bottom: 10rem;
+}
+
+
+
 /* <==================== Classes ====================> */
+
+.boxerInfo{
+	font-size: 3.5rem;;
+	
+}
 .card {
 	height: 28rem;
 	width: 20rem;
@@ -40,7 +52,11 @@
 	font-size: 1.6rem;
 }
 
-.jumbortron {}
+.jumbotron {
+	text-align: center;
+}
+
+
 
 /* <==================== HTML Tags ====================> */
 

@@ -4,7 +4,6 @@ class BoxerRepository extends BaseRepository {
     this.KEY = 'boxers';
   }
 
-
   create(newBoxer) {
     //get collection from storage 
     const boxerStorage = this.getAll();
@@ -18,30 +17,36 @@ class BoxerRepository extends BaseRepository {
     return newBoxer;
   }
 
+  save(boxer, boxerIndex) {
+    const boxerStorage = this.getAll();
+    boxerStorage[boxerIndex] = boxer;
+    localStorage.setItem(this.KEY, JSON.stringify(boxerStorage));
+  }
+
   getAll() {
     return JSON.parse(localStorage.getItem(this.KEY)) || [];
   }
 
-  edit(indexOfBoxer) {
-    let index = indexOfBoxer;
+  getBoxerDetails(boxer){
     const boxerStorage = this.getAll();
-    console.log(boxerStorage[index]);
+
+    
+
 
   }
 
-  getBoxerToEdit() {
+  getById(boxerId) {
+    const boxerStorage = this.getAll();
     let index;
     let boxer;
-    const idSearch = location.search;
-    const boxerId = idSearch.slice(4);
+    boxerId = boxerId;
     for (let i = 0; i < boxerStorage.length; i++) {
       if (boxerStorage[i].id === boxerId) {
         boxer = boxerStorage[i];
         index = boxerStorage.indexOf(boxerStorage[i]);
-        return index;
+        return [boxer, index];
       }
     }
-
   }
 
   delete() {
