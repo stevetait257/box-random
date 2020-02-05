@@ -1,0 +1,169 @@
+<style type="text/css">.statement-with-header {
+  padding: 0 !important;
+}
+.account-statement-header {
+  width: auto;
+  height: 50px;
+  padding: 22px 40px 15px 40px;
+}
+.account-statement-header-box {
+  position: relative;
+  top: 0;
+  left: 0;
+  float: left;
+  text-align: left;
+}
+.account-statement-header-box-document-print-date {
+  width: 32%;
+  text-align: right;
+  color: #888;
+}
+
+.table-calculation .subtotal span {
+  padding-top: 10px;
+  border-top: 1px solid #CCCCCC;
+  display: inline-block;
+  min-width: 200px;
+}
+
+.table-calculation .subtotal span label {
+  display: inline-block;
+  cursor: default;
+  padding-right: 12px;
+  float: left;
+}
+
+.table-calculation tr.detailed th table, .table-calculation tr.detailed td table {
+  width: 100%;
+  color: #888;
+  padding: 0 0 20px 0;
+}
+
+.table-calculation th, .table-calculation td {
+  vertical-align: top;
+  padding: 0 0 20px 0;
+  font-weight: normal;
+  text-align: left;
+}
+.table-calculation td {
+  text-align: right;
+}
+.table-calculation td {
+  padding: 0;
+}
+
+.table-calculation .subtotal td, .table-calculation .subtotal th {
+  padding-top: 4px;
+  padding-bottom: 20px;
+}
+
+.table-calculation .th-section {
+  font-weight: bold;
+  padding-right: 48px;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+</style>
+<div class="wrap-paper-box statement-with-header">
+<div class="account-statement-header">
+<div class="account-statement-header-box account-statement-header-box-venture">
+<div class="header">
+<p><strong>THE ICONIC</strong><br />
+ABN: 50 152 631 082<br />
+Internet Services Australia 1 Pty Limited<br />
+Level 18, 338 Pitt Street<br />
+SYDNEY 2000<br />
+Phone No: 1300 668 345</p>
+&nbsp;&nbsp;&nbsp;</div>
+</div>
+
+<div class="account-statement-header-box account-statement-header-box-document-print-date">{{date}}</div>
+</div>
+
+<div class="account-statement-header">
+<div><strong>Period:</strong> {{account_statement_period}}</div>
+
+<div><strong>Statement No.:</strong>{{account_statement_number}}</div>
+
+<div><strong>Status:</strong> {{account_statement_status}}</div>
+</div>
+
+<div class="clear">&nbsp;</div>
+
+<div class="statement-with-header-body">
+<table class="table-calculation">
+<tbody>
+<tr>
+<th class="th-section" scope="row">Opening Balance</th>
+<td class="td-label">Negative closing balance from previous statements.</td>
+<td class="td-value">{{opening_balance}}</td>
+</tr>
+<tr class="line">
+<th colspan="3">&nbsp;</th>
+</tr>
+<tr>
+<th class="th-section" scope="row">Orders</th>
+<td class="td-label">Sales Revenue</td>
+<td class="td-value">{{orders_sales_revenue}}</td>
+</tr>
+<tr>
+<th class="th-section" scope="row">&nbsp;</th>
+<td class="td-label">Other Revenues</td>
+<td class="td-value">{{orders_other_revenues}}</td>
+</tr>
+<tr>
+<th class="th-section" scope="row">&nbsp;</th>
+<td class="td-label">Fees</td>
+<td class="td-value">{{orders_fees}}</td>
+</tr>
+<tr class="subtotal">
+<td class="td-value" colspan="3" scope="row"><span class="inner"><label>Subtotal </label>{{orders_subtotal}}</span></td>
+</tr>
+<tr>
+<th class="th-section" scope="row">Refunds</th>
+<td class="td-label">Returned or Cancelled Orders</td>
+<td class="td-value">{{refunds_returned_or_cancelled_orders}}</td>
+</tr>
+<tr>
+<th class="th-section" scope="row">&nbsp;</th>
+<td class="td-label">Debit of Other Revenues</td>
+<td class="td-value">{{orders_other_revenues}}</td>
+</tr>
+<tr>
+<th class="th-section" scope="row">&nbsp;</th>
+<td class="td-label">Refund on Fees</td>
+<td class="td-value">{{refunds_refund_on_fees}}</td>
+</tr>
+<tr class="subtotal">
+<td class="td-value" colspan="3" scope="row"><span class="inner"><label>Subtotal </label> {{refunds_subtotal}} </span></td>
+</tr>
+<tr>
+<th class="th-section" scope="row">Others</th>
+<td class="td-label">Others</td>
+<td class="td-value">{{others_others}}</td>
+</tr>
+<tr class="subtotal">
+<td class="td-value" colspan="3" scope="row"><span class="inner"><label>Subtotal </label> {{others_subtotal}} </span></td>
+</tr>
+<tr class="line">
+<th colspan="3">&nbsp;</th>
+</tr>
+<tr>
+<th class="th-section" scope="row">Closing Balance</th>
+<td class="td-label">Total Balance</td>
+<td class="td-value">{{closing_balance_total_balance}}</td>
+</tr>
+<tr class="line-wide">
+<th colspan="3">&nbsp;</th>
+</tr>
+<tr class="maintotal">
+<th class="th-section" scope="row">Payout</th>
+<td class="td-value" colspan="2">{{payout}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

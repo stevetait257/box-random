@@ -49,81 +49,102 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="firstName">First Name</label>
-          <input type="text" class="form-control" id="firstName" value="First Name" placeholder="First Name">
+          <input type="text" class="form-control" id="firstName" value="First Name">
         </div>
         <div class="form-group col-md-6">
           <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName" value="Last Name" placeholder="Last Name">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group pt-3 col-md-6">
-          <label for="nationality">Nationality</label>
-          <input type="text" class="form-control" value="Nationality" id="nationality">
+          <input type="text" class="form-control" id="lastName" value="Last Name">
         </div>
         <div class="form-group col-md-6">
-          <label for="weightClass">Weight Class</label>
-          <select id="weightClass" class="form-control" value="weight">
+          <label for="dateOfBirth">Born</label>
+          <input type="text" class="form-control" id="dateOfBirth" value="dd/mm/yyyy">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="stance">Stance</label>
+          <select id="stance" class="form-control" value="stance">
             <option selected>Choose...</option>
-            <option>
-              super flyweight 115 pounds (52 kg)
-            </option>
-            <option>
-              bantamweight 118 pounds (53.5 kg)
-            </option>
-            <option>
-              super bantamweight 122 pounds (55 kg)
-            </option>
-            <option>
-              featherweight 126 pounds (57 kg)
-            </option>
-            <option>
-              super featherweight 130 pounds (59 kg)
-            </option>
-            <option>
-              lightweight 135 pounds (61 kg)
-            </option>
-            <option>
-              super lightweight 140 pounds (63.5 kg)
-            </option>
-            <option>
-              light flyweight 108 pounds (49 kg)
-            </option>
-            <option>
-              flyweight 112 pounds (51 kg)
-            </option>
-            <option>
-              welterweight 147 pounds (67 kg)
-            </option>
-            <option>
-              super welterweight 154 pounds (70 kg)
-            </option>
-            <option>
-              middleweight 160 pounds (72.5 kg)
-            </option>
-            <option>
-              super middleweight 168 pounds (76 kg)
-            </option>
-            <option>
-              light heavyweight 175 pounds (79 kg)
-            </option>
-            <option>
-              cruiserweight 200 pounds (91 kg)
-            </option>
-            <option>
-              heavyweight (unlimited)
-            </option>
+            <option>orthodox</option>
+            <option>southpaw</option>
           </select>
         </div>
-        <button type="button" class="btn btn-sm btn-primary" id="save">Add</button>
-        <a href=""></a>
+
+        <div class="form-row">
+          <div class="form-group pt-3 col-md-6">
+            <label for="nationality">Nationality</label>
+            <select id="nationality" class="form-control" value="nationality">
+              <option selected>Choose...</option>
+              <option>Argentina 🇦🇷</option>
+              <option>Australia 🇦🇺</option>
+              <option>United Kingdom 🇬🇧</option>
+              <option>USA 🇺🇸</option>
+              <option>Mexico 🇲🇽</option>
+              <option>And so on... 😅</option> 🇬🇧</option>
+
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="weightClass">Weight Class</label>
+            <select id="weightClass" class="form-control" value="weight">
+              <option selected>Choose...</option>
+              <option>
+                super flyweight 115 pounds (52 kg)
+              </option>
+              <option>
+                bantamweight 118 pounds (53.5 kg)
+              </option>
+              <option>
+                super bantamweight 122 pounds (55 kg)
+              </option>
+              <option>
+                featherweight 126 pounds (57 kg)
+              </option>
+              <option>
+                super featherweight 130 pounds (59 kg)
+              </option>
+              <option>
+                lightweight 135 pounds (61 kg)
+              </option>
+              <option>
+                super lightweight 140 pounds (63.5 kg)
+              </option>
+              <option>
+                light flyweight 108 pounds (49 kg)
+              </option>
+              <option>
+                flyweight 112 pounds (51 kg)
+              </option>
+              <option>
+                welterweight 147 pounds (67 kg)
+              </option>
+              <option>
+                super welterweight 154 pounds (70 kg)
+              </option>
+              <option>
+                middleweight 160 pounds (72.5 kg)
+              </option>
+              <option>
+                super middleweight 168 pounds (76 kg)
+              </option>
+              <option>
+                light heavyweight 175 pounds (79 kg)
+              </option>
+              <option>
+                cruiserweight 200 pounds (91 kg)
+              </option>
+              <option>
+                heavyweight (unlimited)
+              </option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-sm btn-primary" id="save">Add</button>
+          <a href=""></a>
+
+        </div>
 
       </div>
 
-  </div>
 
-
-  </form>
+    </form>
   </div>
   <script type="text/javascript" src="src/boxer/Boxer.js"></script>
   <script type="text/javascript" src="src/BaseRepository.js"></script>

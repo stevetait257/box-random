@@ -11,6 +11,8 @@ if (location.search) {
   const lastName = document.querySelector('#lastName').value = `${boxer.lastName}`;
   const nationality = document.querySelector('#nationality').value = `${boxer.nationality}`;
   const weightClass = document.querySelector('#weightClass').value = `${boxer.weightClass}`;
+  const dateOfBirth = document.querySelector('#born').value = `${boxer.dateOfbirth}`;
+  const stance = document.querySelector('#stance').value = `${boxer.stance}`;
 }
 
 document.querySelector('#save').addEventListener('click', function () {
@@ -20,10 +22,13 @@ document.querySelector('#save').addEventListener('click', function () {
     const lastName = document.querySelector('#lastName').value;
     const nationality = document.querySelector('#nationality').value;
     const weightClass = document.querySelector('#weightClass').value;
+    const dateOfBirth = document.querySelector('#dateOfBirth').value;
+    const stance = document.querySelector('#stance').value;
     const wins = 0;
     const losses = 0;
-    const boxer = new Boxer(id, firstName, lastName, nationality, weightClass, wins, losses);
+    const boxer = new Boxer(id, firstName, lastName, nationality, weightClass, dateOfBirth, stance, wins, losses);
     boxerRepo.create(boxer);
+    window.location.reload();
 
   } else {
     const boxerId = location.search.slice(4);
@@ -34,6 +39,8 @@ document.querySelector('#save').addEventListener('click', function () {
     boxer.lastName = document.querySelector('#lastName').value;
     boxer.nationality = document.querySelector('#nationality').value;
     boxer.weightClass = document.querySelector('#weightClass').value;
+    boxer.dateOfBirth = document.querySelector('#dateOfBirth').value;
+    boxer.stance = document.querySelector('#stance').value;
     boxerRepo.save(boxer, boxerIndex);
     console.log(boxer);
     // boxerRepo.save(boxer)

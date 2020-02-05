@@ -14,7 +14,8 @@ function displayBoxer(boxer) {
 
   boxerName.innerText = `${boxer.firstName} ${boxer.lastName}`;
   const boxerData = [
-    `${boxer.nationality}`, `${boxer.weightClass}`,
+    `Nationality: ${boxer.nationality}`, `Division: ${boxer.weightClass}`,
+    `Born: ${boxer.dateOfBirth}`, `Stance: ${boxer.stance}`,
     `Wins: ${boxer.wins} `,
     ` Losses: ${boxer.losses} `,
   ];
