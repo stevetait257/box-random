@@ -3,16 +3,11 @@ class BoxerRepository extends BaseRepository {
     super();
     this.KEY = 'boxers';
   }
-
+// combine create and save 
   create(newBoxer) {
-    //get collection from storage 
     const boxerStorage = this.getAll();
-    // newBoxer = new Boxer();
-    //generate id and assign to id of boxer
     newBoxer.id = this.uuidv4();
-    //push boxer to the collection
     boxerStorage.push(newBoxer)
-    //save the collection
     localStorage.setItem(this.KEY, JSON.stringify(boxerStorage));
     return newBoxer;
   }
@@ -27,14 +22,7 @@ class BoxerRepository extends BaseRepository {
     return JSON.parse(localStorage.getItem(this.KEY)) || [];
   }
 
-  getBoxerDetails(boxer){
-    const boxerStorage = this.getAll();
-
-    
-
-
-  }
-
+// refactor to remove the index
   getById(boxerId) {
     const boxerStorage = this.getAll();
     let index;

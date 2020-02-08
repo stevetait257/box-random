@@ -1,15 +1,14 @@
 const boxerRepo = new BoxerRepository();
-const boxerStorage = boxerRepo.getAll();
 const ul = document.querySelector('#boxer-data');
 
 if (location.search) {
   displayBoxer();
 }
 
-function displayBoxer(boxer) {
+function displayBoxer() {
   const boxerId = location.search.slice(4);
   const boxerAndIndexArray = boxerRepo.getById(boxerId);
-  boxer = boxerAndIndexArray[0];
+  const boxer = boxerAndIndexArray[0];
   const boxerName = document.getElementById('boxer');
 
   boxerName.innerText = `${boxer.firstName} ${boxer.lastName}`;
