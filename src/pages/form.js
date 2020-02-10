@@ -1,28 +1,27 @@
 //code that interacts with your user interface
 const boxerRepo = new BoxerRepository();
 
-function getBoxerById() {
+function getBoxerByIdFromURL() {
   const params = new Map(location.search.slice(1).split('&').map(keyValuePair => keyValuePair.split('=')))
   const boxerId = params.get('id');
   console.log(boxerId)
   return boxerId;
-};
+}
 
+function populateFormFromBoxer(boxer) {
 
-if (location.search) {
-  getBoxerById();
-
-  const boxerId = location.search.slice(4); //function for this
-  const boxerData = boxerRepo.getById(boxerId); // change this to ensure the
-  // param is the boxer ID 
-  const boxer = boxerData[0];
-  //fn populate form from boxer
   document.querySelector('#firstName').value = `${boxer.firstName}`;
   document.querySelector('#lastName').value = `${boxer.lastName}`;
   document.querySelector('#nationality').value = `${boxer.nationality}`;
   document.querySelector('#weightClass').value = `${boxer.weightClass}`;
   document.querySelector('#dateOfBirth').value = `${boxer.dateOfbirth}`;
   document.querySelector('#stance').value = `${boxer.stance}`;
+}
+
+if (location.search) {
+  const boxerId = getBoxerByIdFromURL();
+  const boxer = boxerRepo.getById(boxerId);
+  populateFormFromBoxer(boxer);
 }
 
 document.querySelector('#save').addEventListener('click', function () {
@@ -37,14 +36,14 @@ document.querySelector('#save').addEventListener('click', function () {
     const wins = 0;
     const losses = 0;
     const boxer = new Boxer(id, firstName, lastName, nationality, weightClass, dateOfBirth, stance, wins, losses);
-    boxerRepo.create(boxer);
+    boxerRepo.save(boxer);
     window.location.reload();
 
   } else {
-    const boxerId = location.search.slice(4);
-    const boxerData = boxerRepo.getById(boxerId)
-    const boxer = boxerData[0];
-    const boxerIndex = boxerData[1];
+    const boxerId = getBoxerByIdFromURL();
+    const boxer = boxerRepo.getById(boxerId);
+    const boxerIndex = boxerRepo.getIndex(boxerId);
+
     boxer.firstName = document.querySelector('#firstName').value;
     boxer.lastName = document.querySelector('#lastName').value;
     boxer.nationality = document.querySelector('#nationality').value;
@@ -52,10 +51,5 @@ document.querySelector('#save').addEventListener('click', function () {
     boxer.dateOfBirth = document.querySelector('#dateOfBirth').value;
     boxer.stance = document.querySelector('#stance').value;
     boxerRepo.save(boxer, boxerIndex);
-
-    // boxerRepo.save(boxer)
-
   }
-
-
-})
+});

@@ -6,9 +6,8 @@ if (location.search) {
 }
 
 function displayBoxer() {
-  const boxerId = location.search.slice(4);
-  const boxerAndIndexArray = boxerRepo.getById(boxerId);
-  const boxer = boxerAndIndexArray[0];
+  const boxerId = getBoxerByIdFromURL()
+  const boxer = boxerRepo.getById(boxerId);
   const boxerName = document.getElementById('boxer');
 
   boxerName.innerText = `${boxer.firstName} ${boxer.lastName}`;
@@ -16,7 +15,7 @@ function displayBoxer() {
     `Nationality: ${boxer.nationality}`, `Division: ${boxer.weightClass}`,
     `Born: ${boxer.dateOfBirth}`, `Stance: ${boxer.stance}`,
     `Wins: ${boxer.wins} `,
-    ` Losses: ${boxer.losses} `,
+    ` Losses: ${boxer.losses} `
   ];
   boxerData.forEach(el => {
     const li = document.createElement('li');
