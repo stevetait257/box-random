@@ -7,8 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script type="text/javascript" src="app.js" defer></script>
-  <title>NO css</title>
+  <script type="text/javascript" src="main.js" defer></script>
+  <link rel="icon" href="images/favicon.ico">
+
+  <title>Add a Boxer</title>
 </head>
 
 <body>
@@ -22,7 +24,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand ">Box.random()</a>
+        <a href="index.html" class="navbar-brand "> Box.random(🥊)</a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-navbar-demo">
@@ -33,7 +35,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Fisticuffs</a></li>
           <li><a href="#">Add Boxer</a></li>
-          <li><a href="#">BoxRec</a></li>
+          <li><a href="boxers.html">Boxers</a></li>
         </ul>
       </div>
   </nav>
@@ -43,22 +45,22 @@
       <h1>Add Your Favourite Boxers</h1>
       <p></p>
     </div>
-    <form action="app.js">
+    <form action="#">
       <h2>New Boxer</h2>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="firstName">First Name</label>
-          <input type="text" class="form-control" id="firstName" value="first" placeholder="First Name">
+          <input type="text" class="form-control" id="firstName" value="First Name" placeholder="First Name">
         </div>
         <div class="form-group col-md-6">
           <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName" value="last" placeholder="Last Name">
+          <input type="text" class="form-control" id="lastName" value="Last Name" placeholder="Last Name">
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group pt-3 col-md-6">
           <label for="nationality">Nationality</label>
-          <input type="text" class="form-control" value="nationality" id="nationality">
+          <input type="text" class="form-control" value="Nationality" id="nationality">
         </div>
         <div class="form-group col-md-6">
           <label for="weightClass">Weight Class</label>
@@ -114,14 +116,22 @@
             </option>
           </select>
         </div>
-        <button type="button" class="btn btn-sm btn-primary" id="saveBoxer">Add</button>
+        <button type="button" class="btn btn-sm btn-primary" id="save-boxer">Add</button>
+       
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nationality">Edit Boxer</label>
+            <input type="text" class="form-control" value="Select" id="nationality">
+          </div>
+          <button type="button" class="btn btn-sm btn-primary" id="save-boxer">Edit</button>
 
+
+        </div>
 
       </div>
-  </div>
 
 
-  </form>
+    </form>
   </div>
 
 </body>
