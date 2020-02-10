@@ -4,7 +4,9 @@ const table = document.querySelector('#boxer-list');
 
 table.addEventListener('click', function (e) {
   if (e.target && e.target.matches('.delete')) {
-    boxerRepos.delete(e);
+    const boxerId = getBoxerByIdFromURL();
+    console.log(this);
+    boxerRepos.delete(boxerId);
   }
 });
 

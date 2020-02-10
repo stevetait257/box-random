@@ -3,9 +3,8 @@ class BoxerRepository extends BaseRepository {
     super();
     this.KEY = 'boxers';
   }
-  // combine create and save 
   save(boxer) {
-    // debugger;
+    
     const boxerStorage = this.getAll();
     const boxerToSave = boxer;
     if (!boxerToSave.id) {
@@ -19,15 +18,12 @@ class BoxerRepository extends BaseRepository {
       localStorage.setItem(this.KEY, JSON.stringify(boxerStorage));
       return boxerToSave;
     }
-    // location.reload();
-
+    location.reload();
   }
 
   getAll() {
     return JSON.parse(localStorage.getItem(this.KEY)) || [];
   }
-
-  // refactor to remove the index
   getById(id) {
     const boxerStorage = this.getAll();
     let boxer;
@@ -39,7 +35,6 @@ class BoxerRepository extends BaseRepository {
       }
     }
   }
-
   getIndex(id) {
     const boxerStorage = this.getAll();
     const boxerId = id;
@@ -53,20 +48,11 @@ class BoxerRepository extends BaseRepository {
       }
     }
   }
-
-  delete(e) {
-    console.log(this);
+  delete(id) {
     const boxerStorage = this.getAll();
-    const idSearch = location.search;
-    boxerId = idSearch.slice(4);
-    for (let i = 0; i < boxerStorage.length; i++) {
-      if (boxerStorage[i].id === boxerId) {
-        boxer = boxerStorage[i];
-        index = boxerStorage.indexOf(boxerStorage[i]);
-      }
-    }
+    const boxerId = id;
+    const index = this.getIndex(boxerId);
     boxerStorage.splice(index, 1);
-
     localStorage.setItem(this.KEY, JSON.stringify(boxerStorage));
   }
 }

@@ -1,8 +1,4 @@
-@media print {
-	a[href]:after {
-		content: none !important;
-	}
-}
+
 
 /* <==================== ID's ====================> */
 #save {
@@ -20,17 +16,14 @@
 }
 
 #boxer {
-
 	margin-bottom: 4rem;
 }
-
-
 
 /* <==================== Classes ====================> */
 
 .boxerInfo {
 	font-size: 3.5rem;
-	;
+	color: black;
 
 }
 
