@@ -15,6 +15,9 @@ function populateFormFromBoxer(boxer) {
   document.querySelector('#weightClass').value = `${boxer.weightClass}`;
   document.querySelector('#dateOfBirth').value = `${boxer.dateOfBirth}`;
   document.querySelector('#stance').value = `${boxer.stance}`;
+  document.querySelector('#health').value = `${boxer.health}`;
+  document.querySelector('#damage').value = `${boxer.damage}`;
+  document.querySelector('#agility').value = `${boxer.agility}`;
 }
 
 if (location.search) {
@@ -32,9 +35,11 @@ document.querySelector('#save').addEventListener('click', function () {
     const weightClass = document.querySelector('#weightClass').value;
     const dateOfBirth = document.querySelector('#dateOfBirth').value;
     const stance = document.querySelector('#stance').value;
-    const wins = 0;
-    const losses = 0;
-    const boxer = new Boxer(id, firstName, lastName, nationality, weightClass, dateOfBirth, stance, wins, losses);
+    const health = document.querySelector('#health').value
+    const damage = document.querySelector('#damage').value
+    const agility = document.querySelector('#agility').value
+
+    const boxer = new Boxer(id, firstName, lastName, nationality, weightClass, dateOfBirth, stance, health, damage, agility);
     boxerRepo.save(boxer);
     window.location.reload();
 
@@ -48,6 +53,9 @@ document.querySelector('#save').addEventListener('click', function () {
     boxer.weightClass = document.querySelector('#weightClass').value;
     boxer.dateOfBirth = document.querySelector('#dateOfBirth').value;
     boxer.stance = document.querySelector('#stance').value;
+    boxer.health = document.querySelector('#health').value;
+    boxer.damage = document.querySelector('#damage').value;
+    boxer.agility = document.querySelector('#agility').value;
     boxerRepo.save(boxer, boxerIndex);
   }
 });
