@@ -18,7 +18,7 @@ class BoxerRepository extends BaseRepository {
       localStorage.setItem(this.KEY, JSON.stringify(boxerStorage));
       return boxerToSave;
     }
-    location.reload();
+  
   }
 
   getAll() {

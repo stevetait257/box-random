@@ -4,7 +4,6 @@ const boxerRepo = new BoxerRepository();
 function getBoxerByIdFromURL() {
   const params = new Map(location.search.slice(1).split('&').map(keyValuePair => keyValuePair.split('=')))
   const boxerId = params.get('id');
-  console.log(boxerId)
   return boxerId;
 }
 
@@ -14,7 +13,7 @@ function populateFormFromBoxer(boxer) {
   document.querySelector('#lastName').value = `${boxer.lastName}`;
   document.querySelector('#nationality').value = `${boxer.nationality}`;
   document.querySelector('#weightClass').value = `${boxer.weightClass}`;
-  document.querySelector('#dateOfBirth').value = `${boxer.dateOfbirth}`;
+  document.querySelector('#dateOfBirth').value = `${boxer.dateOfBirth}`;
   document.querySelector('#stance').value = `${boxer.stance}`;
 }
 
@@ -43,7 +42,6 @@ document.querySelector('#save').addEventListener('click', function () {
     const boxerId = getBoxerByIdFromURL();
     const boxer = boxerRepo.getById(boxerId);
     const boxerIndex = boxerRepo.getIndex(boxerId);
-
     boxer.firstName = document.querySelector('#firstName').value;
     boxer.lastName = document.querySelector('#lastName').value;
     boxer.nationality = document.querySelector('#nationality').value;
