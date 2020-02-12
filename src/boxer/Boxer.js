@@ -1,5 +1,5 @@
 class Boxer {
-  constructor(id, firstName, lastName, nationality, weightClass, dateOfBirth, stance, wins, losses) {
+  constructor(id, firstName, lastName, nationality, weightClass, dateOfBirth, stance, health, damage, agility) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -7,7 +7,9 @@ class Boxer {
     this.weightClass = weightClass;
     this.dateOfBirth = dateOfBirth;
     this.stance = stance;
-    this.wins = wins;
-    this.losses = losses;
+    this.health = health;
+    this.damage = damage;
+    this.agility = agility;
+
   }
 }
