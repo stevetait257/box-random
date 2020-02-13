@@ -6,14 +6,16 @@ if (location.search) {
 }
 
 function displayBoxer() {
-  const boxerId = getBoxerByIdFromURL()
+  const boxerId = getBoxerByIdFromURL();
   const boxer = boxerRepo.getById(boxerId);
   const boxerName = document.getElementById('boxer');
 
   boxerName.innerText = `${boxer.firstName} ${boxer.lastName}`;
   const boxerData = [
-    `Nationality: ${boxer.nationality}`, `Division: ${boxer.weightClass}`,
-    `Born: ${boxer.dateOfBirth}`, `Stance: ${boxer.stance}`,
+    `Nationality: ${boxer.nationality}`,
+    `Division: ${boxer.weightClass}`,
+    `Born: ${boxer.dateOfBirth}`,
+    `Stance: ${boxer.stance}`,
     `Wins: ${boxer.wins} `,
     ` Losses: ${boxer.losses} `
   ];

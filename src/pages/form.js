@@ -1,12 +1,6 @@
 //code that interacts with your user interface
 const boxerRepo = new BoxerRepository();
 
-function getBoxerByIdFromURL() {
-  const params = new Map(location.search.slice(1).split('&').map(keyValuePair => keyValuePair.split('=')))
-  const boxerId = params.get('id');
-  return boxerId;
-}
-
 function populateFormFromBoxer(boxer) {
 
   document.querySelector('#firstName').value = `${boxer.firstName}`;

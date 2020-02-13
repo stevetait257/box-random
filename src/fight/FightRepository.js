@@ -7,3 +7,22 @@ class FightRepository extends BaseRepository{
   }
 
 }
+
+/*
+
+init(){
+
+
+}
+
+startFight(){
+
+
+}
+
+
+getFight(){
+  
+}
+
+*/

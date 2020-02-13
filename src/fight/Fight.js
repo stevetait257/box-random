@@ -5,6 +5,7 @@ class Fight {
     this.location = location;
     this.fighterA = fighterA;
     this.fighterB = fighterB;
-    this.winner = winner; 
+    this.winner = winner;
+    
   }
 }
