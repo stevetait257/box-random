@@ -4,10 +4,10 @@ const table = document.querySelector('#boxer-list');
 
 table.addEventListener('click', function (e) {
   if (e.target && e.target.matches('.delete')) {
-    const boxerId = getBoxerByIdFromURL();
+    const boxerId = e.target.dataset.id;
     boxerRepos.delete(boxerId);
-
-    
+    e.preventDefault();
+    location.reload();
   }
 });
 
@@ -17,7 +17,8 @@ table.addEventListener('click', function (e) {
     const tr = document.createElement('tr');
     table.appendChild(tr);
     const deleteBoxerButton = document.createElement('a');
-    deleteBoxerButton.href = `index.html?id=${boxer.id}`;
+    deleteBoxerButton.href = `#`;
+    deleteBoxerButton.dataset.id = boxer.id;
     deleteBoxerButton.textContent = 'delete';
     deleteBoxerButton.className = 'delete';
     const editBoxerButton = document.createElement('a');
