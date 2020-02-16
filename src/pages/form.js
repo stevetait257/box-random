@@ -21,6 +21,11 @@ if (location.search) {
 }
 
 document.querySelector('#save').addEventListener('click', function () {
+  const validForm = document.forms[0].checkValidity();
+  if (!validForm) {
+    return;
+  }
+
   if (!location.search) {
     let id;
     const firstName = document.querySelector('#firstName').value;
@@ -52,4 +57,6 @@ document.querySelector('#save').addEventListener('click', function () {
     boxer.agility = document.querySelector('#agility').value;
     boxerRepo.save(boxer, boxerIndex);
   }
+
+
 });

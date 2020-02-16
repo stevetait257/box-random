@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="images/favicon.ico">
-
   <title>Add a Boxer</title>
 </head>
 
@@ -49,19 +48,20 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="firstName">First Name</label>
-          <input type="text" class="form-control" id="firstName" value="First Name">
+          <input type="text" class="form-control" id="firstName" value="First Name" required>
         </div>
         <div class="form-group col-md-6">
           <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName" value="Last Name">
+          <input type="text" class="form-control" id="lastName" value="Last Name" required>
         </div>
         <div class="form-group col-md-6">
           <label for="dateOfBirth">Born</label>
-          <input type="date" class="form-control" id="dateOfBirth" value="1985-05-03">
+          <input type="date" class="form-control" id="dateOfBirth" min="1900-01-01" max="2000-01-01" value="1985-05-03"
+            required>
         </div>
         <div class="form-group col-md-6">
           <label for="stance">Stance</label>
-          <select id="stance" class="form-control" value="stance">
+          <select id="stance" class="form-control" value="stance" required>
             <option selected>Choose...</option>
             <option>Orthodox</option>
             <option>Southpaw</option>
@@ -71,7 +71,7 @@
         <div class="form-row">
           <div class="form-group pt-3 col-md-6">
             <label for="nationality">Nationality</label>
-            <select id="nationality" class="form-control" value="nationality">
+            <select id="nationality" class="form-control" value="nationality" required>
               <option selected>Choose...</option>
               <option>Argentina 🇦🇷</option>
               <option>Australia 🇦🇺</option>
@@ -84,7 +84,7 @@
           </div>
           <div class="form-group col-md-6">
             <label for="weightClass">Weight Class</label>
-            <select id="weightClass" class="form-control" value="weight">
+            <select id="weightClass" class="form-control" value="weight" required>
               <option selected>Choose...</option>
               <option>
                 super flyweight 115 pounds (52 kg)
@@ -141,20 +141,20 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="health">Health Points</label>
-            <input type="text" class="form-control" id="health" value="" maxlength="3" required>
+            <input type="text" class="form-control" id="health" maxlength="3" required>
           </div>
           <div class="form-group col-md-4">
             <label for="damage">Damage Points</label>
-            <input type="text" class="form-control" id="damage" value="" maxlength="3" required>
+            <input type="text" class="form-control" id="damage" maxlength="3" required>
           </div>
           <div class="form-group col-md-4">
             <label for="agility">Agility</label>
-            <input type="text" class="form-control" id="agility" value="" maxlength="3" required>
+            <input type="text" class="form-control" id="agility" maxlength="3" required>
           </div>
 
         </div>
         <button type="submit" class="btn btn-sm btn-primary" id="save">Save</button>
-        <a href=""></a>
+        <a href="#"></a>
 
 
       </div>
