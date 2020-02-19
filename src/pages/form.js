@@ -1,7 +1,7 @@
 //code that interacts with your user interface
 const boxerRepo = new BoxerRepository();
 
-function populateFormFromBoxer(boxer) {
+function populateFromBoxer(boxer) {
 
   document.querySelector('#firstName').value = `${boxer.firstName}`;
   document.querySelector('#lastName').value = `${boxer.lastName}`;
@@ -17,7 +17,7 @@ function populateFormFromBoxer(boxer) {
 if (location.search) {
   const boxerId = getBoxerByIdFromURL();
   const boxer = boxerRepo.getById(boxerId);
-  populateFormFromBoxer(boxer);
+  populateFromBoxer(boxer);
 }
 
 document.querySelector('#save').addEventListener('click', function () {
