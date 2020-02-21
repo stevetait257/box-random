@@ -1,27 +1,25 @@
-class FightRepository extends BaseRepository{
+class FightRepository extends BaseRepository {
 
-  constructor(){
+  constructor() {
     super();
     this.KEY = 'fights';
 
   }
 
+
+  getAll() {
+    return JSON.parse(localStorage.getItem(this.KEY)) || [];
+  }
 }
+
 
 /*
 
-init(){
-
-
-}
-
-startFight(){
-
+saveFight(){
 
 }
 
-
-getFight(){
+getFightsByBoxer(){
   
 }
 

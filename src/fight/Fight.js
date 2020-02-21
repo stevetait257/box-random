@@ -3,9 +3,9 @@ class Fight {
 
     this.id = id;
     this.location = location;
-    this.fighterA = fighterA;
+    this.fighterA = fighterA;// boxer entity
     this.fighterB = fighterB;
-    this.actionsOfFight = [];
+    //this.actionsOfFight = [];
     this.winner = winner;
 
   }
