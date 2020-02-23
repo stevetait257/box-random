@@ -41,8 +41,11 @@ function renderBoxers(fight) {
 
   const fightObj = fight;
   console.dir(fightObj)
-  // const blueCornerBoxer = document.getElementById('blue-name');
-  // blueCornerBoxer.innerHTML = fightObj
+
+  const blueCornerBoxer = document.getElementById('blue-name');
+  blueCornerBoxer.innerHTML = `${fightObj.blueCorner.firstName} ${fightObj.blueCorner.lastName}`;
+  const redCornerBoxer = document.getElementById('red-name');
+  redCornerBoxer.innerHTML = `${fightObj.redCorner.firstName} ${fightObj.redCorner.lastName}`;
 
 
 }

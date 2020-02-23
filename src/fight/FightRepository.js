@@ -22,9 +22,6 @@ class FightRepository extends BaseRepository {
 
 /*
 
-saveFight(){
-
-}
 
 getFightsByBoxer(){
   
